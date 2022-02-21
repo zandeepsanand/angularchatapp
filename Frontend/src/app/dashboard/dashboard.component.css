@@ -21,7 +21,7 @@ body {
   --number-bg: #6895a3;
   --message-box-1: #fff;
   --message-box-2: #1a233b;
-  --chat-input: #060415;
+  --chat-input: #150405;
   --border-light: #8187a2;
   --info-box-color-1: #004dfc;
   --info-box-color-2: #00ba9d;
@@ -31,9 +31,9 @@ body {
   --info-icon-bg-2: #c6f0ea;
   --info-icon-bg-3: #d9d3ff;
   --info-icon-bg-4: #ffe1d4;
-  --app-bg: #060415;
-  --box-color: #12172d;
-  --box-border: #477eff;
+  --app-bg: #260f3b;
+  --box-color: #4c2883;
+  --box-border: #477eff9c;
   --button-bg: #477eff;
   --text-dark: rgba(255, 255, 255, 1);
   --text-light: rgba(255, 255, 255, 0.6);
@@ -97,15 +97,15 @@ body[data-theme="pink"] {
   --toggle-bg: #1a233b;
 }
 body[data-theme="navy-dark"] {
-  --app-bg: #060415;
-  --box-color: #12172d;
+  --app-bg: #5e2390;
+  --box-color: #35322f;
   --box-border: #477eff;
   --button-bg: #477eff;
   --toggle-bg: #477eff;
   --toggle-bg-off: #6895a3;
   --message-box-2: #477eff;
   --message-box-1: #576c99;
-  --chat-input: #060415;
+  --chat-input: #5e2390;
   --border-light: #8187a2;
 }
 body[data-theme="navy-dark"],
@@ -760,7 +760,7 @@ body[data-theme="dark"] {
   background-color: #e8d5db;
 }
 .theme-color.dark {
-  background-color: #060415;
+  background-color: #5e2390;
 }
 .theme-color.navy-dark {
   background-color: #192734;
