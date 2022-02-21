@@ -1,0 +1,106 @@
+<div *ngFor="let user of user">
+<div  *ngIf="email==user.email" class="app-profile-box">
+  <span style="color: white;" class="material-icons">
+    person
+    </span>
+  <div  class="app-profile-box-name">
+    {{user.name}}
+
+  </div>
+  <p class="app-profile-box-title">{{user.email}}</p>
+  <div class="switch-status">
+    <input type="checkbox" name="switchStatus" id="switchStatus" checked>
+    <a class="nav-link active" (click)= "logoutUser()" style="cursor:pointer">LogOut</a>
+
+  </div>
+</div>
+</div>
+<div class="chat-list-wrapper" >
+            <div class="chat-list-header">Contacts <span class="c-number">{{count}}</span>
+              <svg class="list-header-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="feather feather-chevron-up" viewBox="0 0 24 24">
+                <defs/>
+                <path d="M18 15l-6-6-6 6"/>
+              </svg>
+            </div>
+            <ul *ngFor="let user of user" class="chat-list active">
+              <li style=" display: flex;
+              justify-content: space-between;"  *ngIf="email!==user.email" class="chat-list-item active">
+              <div>
+
+                <span class="material-icons">
+                  person
+                  </span>
+                
+                <span style="margin-left: 3mm;" (click)="chatUser(user)"  class="chat-list-name">{{user.name}}</span>
+              </div>
+
+
+               
+
+                <div style="padding: 2px; display: flex;
+                justify-content: space-between;" *ngIf="user.status=='online'">
+                  <span  class="dot" style="background-color: green; display: flex;
+                  justify-content: space-between; "></span>
+               </div>
+                  <div style="padding: 2px;" *ngIf="user.status=='offline'">
+                  <span class="dot" style="display: flex;
+                  justify-content: space-between;"></span>
+              </div>
+              </li>
+            </ul>
+</div> 
+
+<div class="chat-list-wrapper" >
+  <div class="chat-list-header">Groups <span class="c-number">{{gcount}}  </span> 
+    <svg class="list-header-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="feather feather-chevron-up" viewBox="0 0 24 24">
+      <defs/>
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+    <!-- modal -->
+    <div style="padding-left: 25px;">
+                
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Create Group
+      </button>
+    </div>
+    
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+    
+          <!-- Modal Header -->
+          <!-- <div class="modal-header">
+            <h4 class="modal-title">Create Group Name</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div> -->
+    
+          <!-- Modal body -->
+          <div class="modal-body">
+           <input type="text" name="groupname" [(ngModel)]="gname" class="form-control" placeholder="Create Group">
+          </div>
+    
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="createGroup()"  data-bs-dismiss="modal">Ok</button>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+          </div>
+    
+        </div>
+      </div>
+    </div>
+
+<!-- modal -->
+  </div>
+  <ul *ngFor="let group of group" class="chat-list active">
+    <li style=" display: flex;
+    justify-content: space-between;" class="chat-list-item active">
+    <div>
+      <span class="material-icons">
+        groups
+        </span>
+      <span style="margin-left: 3mm;" (click)="chatGroup(group)" class="chat-list-name">{{group.name}}</span>
+    </div>
+    </li>
+  </ul>
+</div> 
